@@ -1,38 +1,77 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 20px;
+  background: linear-gradient(
+    red,
+    transparent
+  ), linear-gradient(
+    to top left,
+    lime,
+    transparent
+  ), linear-gradient(
+    to top right,
+    blue,
+    transparent
+  );
+  background-blend-mode: screen;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  position: absolute;
+  font-size: 100px;
+  width: 100%;
+  text-align: center;
+  top: 20%;
+}
+
+.game {
+  background: rgba(255, 255, 255, 0.36);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.btn {
+  width: 200px;
+  padding: 10px 20px;
+  margin: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #4caf50; /* Modern green shade */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049; /* Slightly darker shade */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.btn:active {
+  background-color: #3e8e41; /* Even darker shade for active state */
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0); /* Reset lift effect */
 }
