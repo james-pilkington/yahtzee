@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/yahtzee/static/css/main.186af743.css",
-    "main.js": "/yahtzee/static/js/main.7188bb07.js",
+    "main.css": "/yahtzee/static/css/main.ff098345.css",
+    "main.js": "/yahtzee/static/js/main.c1635802.js",
     "static/js/453.e93822c7.chunk.js": "/yahtzee/static/js/453.e93822c7.chunk.js",
     "static/media/Dice4.png": "/yahtzee/static/media/Dice4.d16f22b6be0e19d917e1.png",
     "static/media/Dice6.png": "/yahtzee/static/media/Dice6.12ab6eb76c57b428119f.png",
     "static/media/Dice3.png": "/yahtzee/static/media/Dice3.af7e0484b36a4e83b17e.png",
     "index.html": "/yahtzee/index.html",
-    "main.186af743.css.map": "/yahtzee/static/css/main.186af743.css.map",
-    "main.7188bb07.js.map": "/yahtzee/static/js/main.7188bb07.js.map",
+    "main.ff098345.css.map": "/yahtzee/static/css/main.ff098345.css.map",
+    "main.c1635802.js.map": "/yahtzee/static/js/main.c1635802.js.map",
     "453.e93822c7.chunk.js.map": "/yahtzee/static/js/453.e93822c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.186af743.css",
-    "static/js/main.7188bb07.js"
+    "static/css/main.ff098345.css",
+    "static/js/main.c1635802.js"
   ]
 }
