@@ -14,6 +14,7 @@ function Game({ playerCount, scorecards: initialScorecards }) {
   const [totals, setTotals] = useState([]); // Store totals for players
   const { setStartGame } = useContext(GameContext);
   const [showWarning, setShowWarning] = useState(false); // Warning state
+  const [isRolling, setIsRolling] = useState(false); // New state for animation
 
   const [scorecards, setScorecards] = useState(() =>
     Array(playerCount).fill().map(() =>
@@ -46,20 +47,24 @@ function Game({ playerCount, scorecards: initialScorecards }) {
     setStartGame(false); // Reset to go back to the home page
   };
 
+  const rollDice = () => {
+    if (rolls > 0) {
+      setIsRolling(true); // Start animation
+      setTimeout(() => {
+        const newDice = dice.map((die, idx) =>
+          held[idx] ? die : Math.floor(Math.random() * 6) + 1
+        );
+        setDice(newDice);
+        setRolls(rolls - 1);
+        setIsRolling(false); // Stop animation after dice are rolled
+      }, 500); // Match the animation duration
+    }
+  };
+
   const toggleHold = (idx) => {
     const newHeld = [...held];
     newHeld[idx] = !newHeld[idx];
     setHeld(newHeld);
-  };
-
-  const rollDice = () => {
-    if (rolls > 0) {
-      const newDice = dice.map((die, idx) =>
-        held[idx] ? die : Math.floor(Math.random() * 6) + 1
-      );
-      setDice(newDice);
-      setRolls(rolls - 1);
-    }
   };
 
   const handleTemporaryScore = (cardIdx, categoryIdx, score) => {
@@ -146,11 +151,11 @@ function Game({ playerCount, scorecards: initialScorecards }) {
       {!gameOver ? (
         <>
           {dice && dice.some((die) => die !== null) ? (
-            <Dice dice={dice} held={held} toggleHold={toggleHold} />
+            <Dice dice={dice} held={held} toggleHold={toggleHold} isRolling={isRolling} />
           ) : (
             <h2>ROLL TO START TURN</h2>
           )}
-          <button class="btn" onClick={rollDice} disabled={rolls === 0}>
+          <button className="btn" onClick={rollDice} disabled={rolls === 0 || isRolling}>
             Roll Dice ({rolls} rolls left)
           </button>
           <button class="btn" onClick={endTurn}>End Turn</button>

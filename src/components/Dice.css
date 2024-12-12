@@ -1,25 +1,45 @@
 .dice {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    /* width: 50%; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.die {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.die:hover {
+  transform: scale(1.1);
+}
+
+.die.held {
+  border: 3px solid #ffeb3b;
+  border-radius: 5px;
+}
+
+@keyframes dice-roll {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .die {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  25% {
+    transform: rotate(90deg);
   }
-  
-  .die:hover {
-    transform: scale(1.1);
+  50% {
+    transform: rotate(180deg);
   }
-  
-  .die.held {
-    border: 3px solid #ffeb3b;
-    border-radius: 5px;
+  75% {
+    transform: rotate(270deg);
   }
-  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.die.rolling {
+  animation: dice-roll 0.5s ease-in-out;
+}

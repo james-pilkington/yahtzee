@@ -34,6 +34,7 @@ body {
   width: 100%;
   text-align: center;
   top: 20%;
+  z-index: -1;
 }
 
 .game {
@@ -74,4 +75,38 @@ body {
   background-color: #3e8e41; /* Even darker shade for active state */
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(0); /* Reset lift effect */
+}
+
+/* Reduce the title size on smaller screens */
+@media (max-width: 768px) {
+  .title {
+    font-size: 50px; /* Smaller font size */
+    top: 10%; /* Adjusted positioning */
+  }
+
+  .game {
+    width: 90%; /* Reduce game width */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .btn {
+    width: 150px; /* Smaller button width */
+    font-size: 14px; /* Smaller font size */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .title {
+    font-size: 30px; /* Even smaller font size */
+  }
+
+  .dice {
+    flex-direction: column; /* Stack dice vertically */
+  }
+
+  .die {
+    width: 40px; /* Smaller dice size */
+    height: 40px;
+  }
 }
